@@ -19,3 +19,5 @@ require (
 	google.golang.org/grpc v1.45.0
 	gopkg.in/yaml.v2 v2.4.0
 )
+
+replace github.com/grafana/loki-client-go => github.com/wensiet/loki-client-go	v0.0.0-20240203122041-12038c718902
