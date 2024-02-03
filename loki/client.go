@@ -304,9 +304,7 @@ func (c *Client) sendBatch(tenantID string, batch *batch) {
 			break
 		}
 
-		level.Warn(c.logger).Log("msg", "error sending batch, will retry", "status", status, "error", err)
-		batchRetries.WithLabelValues(c.cfg.URL.Host).Inc()
-		backoff.Wait()
+		level.Warn(c.logger).Log("msg", "error sending batch", "status", status, "error", err)
 	}
 
 	if err != nil {
